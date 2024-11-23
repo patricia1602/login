@@ -10,7 +10,7 @@ $rotas_permitidas = require_once __DIR__ . '/../inc/rotas.php';
 $rota = $_GET['rota'] ?? 'home';
 
 // verifica se o usuário está logado
-if(!isset($_SESSION['usuario'])){
+if(!isset($_SESSION['usuario']) && $rota !== 'login_submit'){
     $rota  ="login";
 }
 
